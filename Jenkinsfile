@@ -21,9 +21,10 @@ pipeline {
 				withCredentials([[$class: 'UsernamePasswordMultiBinding',
 					credentialsId: 'admin_user_credentials', 
 					usernameVariable: 'USER', 
-					passwordVariable: 'PWD'
+					passwordVariable: 'PASSWORD'
 				]]) {
-					sh 'printf ${USER} ${PWD}'
+					sh 'printf ${USER}'
+                    sh 'printf ${PASSWORD}'
 				}
 			}
 		}
